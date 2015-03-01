@@ -1,0 +1,25 @@
+Changelog for FormitFastPack.
+
+FormitFastPack 1.1.0 pl
+======================================
+- Various bug fixes
+- Added several field parameters, including &default_value
+- Updated example property set in the fieldPropSetExample snippet.
+
+FormitFastPack 1.0.0 alpha
+======================================
+- Fixed value refresh bug (Revo 2.2?)
+- Speed optimization
+- Refactoring for OOP
+- Various options tweaked, not all options fully tested yet
+
+FormitFastPack 0.1.1 beta - 0.1.4 beta
+======================================
+- added support for options and field_html generated from any element
+- added error prefix override (for better compatibility with EditProfile)
+- changed the default chunk names
+
+
+FormitFastPack 0.1.0 beta
+======================================
+- starting version
