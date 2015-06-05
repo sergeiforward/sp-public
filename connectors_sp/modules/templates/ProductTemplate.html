@@ -1,0 +1,73 @@
+[[$SystemHeader]]
+
+<body>
+
+	<div class="container-fluid">
+
+		[[$HeaderCommon]]
+
+		<div class="row">
+
+			<div class="col-md-8">
+
+				<h1>[[*pagetitle]]</h1>
+
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<img src="[[*Image]]" alt="[[*pagetitle]]" class="img-thumbnail">
+						
+
+					</div>
+
+					<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+
+						<h3><span class="label label-info">[[*Price]]&nbsp;<i class="glyphicon glyphicon-ruble"></i></span></h3>
+
+						<p>[[*content]]</p>
+
+						<!--
+
+						<p><a href="#" class="btn btn-success shk-but"  >Добавить в корзину</a></p>
+
+						-->
+
+						<form action="[[~[[*id]]? &scheme=`abs`]]" method="post">
+            <fieldset>
+                <input type="hidden" name="shk-id" value="[[*id]]" />
+                <input type="hidden" name="shk-count" value="1" />
+                <div class="product-price">
+                    <button type="submit" class="shk-but">Add to cart</button>
+                    <div>Price: <span class="shk-price">[[*Price:num_format]]</span> руб.</div>
+                </div>
+            </fieldset>
+        </form>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-md-4">
+				[[!Shopkeeper3@cart_catalog?
+					&propertySetName=`cart_catalog`
+					&orderFormPageId=`13`
+				]]
+			</div>
+
+		</div>
+
+	
+
+	</div>
+
+	[[$CommonAuxFooter]]
+
+  <script src="public/static/app.js"></script>
+</body>
+
+
+
+</html>
+
+
+

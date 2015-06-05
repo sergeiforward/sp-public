@@ -1,0 +1,6 @@
+{
+  "cwd": "/www/sp",
+  "directory": "src/libs/",
+  "analytics": false,
+  "timeout": 60000
+}
