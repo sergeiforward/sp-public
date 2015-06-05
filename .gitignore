@@ -37,3 +37,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+.gitignore
+node_modules/
+core/cache/

@@ -1,0 +1,126 @@
+[[!Register?
+    &submitVar=`registerbtn`
+    &activationResourceId=`15`
+    &submittedResourceId=`16`
+    &usergroups=`Clients`
+    &activationEmailTpl=`Registration_ActivationEmailTpl`,
+    &activationEmailSubject=`Регистрация в магазине [[++site_name]]`
+    &validate=`nospam:blank,
+        username:required:minLength=^6^,
+        password:required:minLength=^6^,
+        password_confirm:password_confirm=^password^,
+        fullname:required,
+        phone:required,
+        email:required:email`,
+        agreement:required
+    &placeholderPrefix=`reg.`
+]]
+
+
+<form class="form-horizontal" action="[[~[[*id]]]]" method="post">
+    <input type="hidden" name="nospam" value="[[!+reg.nospam]]" />
+    <fieldset>
+        
+        <legend>Регистрация пользователя</legend>
+  
+        <div class="row [[!+reg.error.message:is=``:then=`hidden`]]">
+            <div class="col-sm-8">
+
+                <div class="alert alert-dismissible alert-danger">
+                    <strong>Внимание!</strong> [[!+reg.error.message]]
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Логин -->
+        <div class="form-group [[!+reg.error.username:isnot=``:then=`has-error`]]">
+            <label for="inputLogin" class="col-lg-4 control-label">[[%register.username? &namespace=`login` &topic=`register`]]</label>
+            <div class="col-lg-8">
+                <input type="text" name="username" id="inputLogin" class="form-control" value="[[!+reg.username]]" />
+                <span class="help-block [[!+reg.error.username:isnot=``:then=`hidden`]]">Латинские буквы и цифры, минимум 6 символов</span>
+                <span class="help-block text-danger [[!+reg.error.username:is=``:then=`hidden`]]">[[!+reg.error.username]]</span>
+            </div>
+        </div>
+        <!-- //Логин -->
+
+        <!-- Имя, фамилия -->
+        <div class="form-group [[!+reg.error.fullname:isnot=``:then=`has-error`]]">
+            <label for="inputFullname" class="col-lg-4 control-label">Имя, Фамиилия</label>
+            <div class="col-lg-8">
+                <input type="text" name="fullname" id="inputFullname" class="form-control" value="[[!+reg.fullname]]" />
+                <span class="help-block [[!+reg.error.fullname:isnot=``:then=`hidden`]]">Как нам к вам обращаться?</span>
+                <span class="help-block text-danger [[!+reg.error.fullname:is=``:then=`hidden`]]">[[!+reg.error.fullname]]</span>
+            </div>
+        </div>
+        <!-- //Имя, фамилия -->
+
+         <!-- Телефон -->
+        <div class="form-group [[!+reg.error.phone:isnot=``:then=`has-error`]]">
+            <label for="inputPhone" class="col-lg-4 control-label">Телефон</label>
+            <div class="col-lg-8">
+                <input type="text" name="phone" id="inputPhone" class="form-control" value="[[!+reg.phone]]" />
+                <span class="help-block [[!+reg.error.phone:isnot=``:then=`hidden`]]">Наш менеджер свяжется с вами по этому телефону. Мы не будем рассылать вам спам</span>
+                <span class="help-block text-danger [[!+reg.error.phone:is=``:then=`hidden`]]">[[!+reg.error.phone]]</span>
+            </div>
+        </div>
+        <!-- //Телефон -->
+
+        <!-- Е-мэил -->
+        <div class="form-group [[!+reg.error.email:isnot=``:then=`has-error`]]">
+            <label for="inputEmail" class="col-lg-4 control-label">[[%register.email]]</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="email" id="inputEmail" value="[[!+reg.email]]">
+                <span class="help-block [[!+reg.error.email:isnot=``:then=`hidden`]]">Ваш действующий E-mail, на него будет отправленно письмо с активацией</span>
+                <span class="help-block text-danger [[!+reg.error.email:is=``:then=`hidden`]]">[[!+reg.error.email]]</span>
+            </div>
+        </div>
+        <!-- //Е-мэил -->
+
+        <!-- Пароль -->
+        <div class="form-group [[!+reg.error.password:isnot=``:then=`has-error`]]">
+            <label for="inputPassword" class="col-lg-4 control-label">[[%register.password]]</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" name="password" id="inputPassword" value="[[!+reg.password]]">
+                <span class="help-block [[!+reg.error.password:isnot=``:then=`hidden`]]">Латинские буквы и цифры, минимум 6 символов</span>
+                <span class="help-block text-danger [[!+reg.error.password:is=``:then=`hidden`]]">[[!+reg.error.password]]</span>
+            </div>
+        </div>
+        <!-- // Пароль -->
+
+        <!-- Подтверждение пароля -->
+        <div class="form-group [[!+reg.error.password_confirm:isnot=``:then=`has-error`]]">
+            <label for="inputEmail" class="col-lg-4 control-label">[[%register.password_confirm]]</label>
+            <div class="col-lg-8">
+                <input type="text" class="form-control"  name="password_confirm" id="inputPasswordConfirm" value="[[!+reg.password_confirm]]">
+                <span class="help-block [[!+reg.error.password_confirm:isnot=``:then=`hidden`]]">Подтвердите пароль</span>
+                <span class="help-block text-danger [[!+reg.error.password_confirm:is=``:then=`hidden`]]">[[!+reg.error.password_confirm]]</span>
+            </div>
+        </div>
+        <!-- // Подтверждение пароля -->
+
+        <!-- Согласен с правилами -->
+        <div class="form-group">
+            
+            <div class="col-lg-8 col-md-offset-4">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="agreement"> Согласен с <a href="[[~14]]">Условиями</a> использования сервиса
+                    </label>
+                </div>
+                <span class="help-block  [[!+reg.error.agreement:is=``:then=`hidden`]]" style="color: #e51c23;">[[!+reg.error.agreement]]</span>
+            </div>
+        </div>
+        <!-- // Согласен с правилами -->
+
+        <!-- Зарегистрироваться -->
+        <div class="form-group">
+            <div class="col-lg-4 col-lg-offset-8">
+            
+                <input type="submit" class="btn btn-primary btn-block" name="registerbtn" value="Зарегистрироваться">
+            </div>
+        </div>
+        <!-- // Зарегистрироваться -->
+    
+    </fieldset>
+</form>

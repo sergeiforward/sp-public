@@ -1,0 +1,84 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      'eb7fe2ff8d441e877bdd580c421abf85' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"mxManager","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"switch ($modx->event->name) {\\n\\n\\tcase \'OnManagerPageInit\':\\n\\t\\t\\/** @var array $scriptProperties *\\/\\n\\t\\t\\/** @var mxManager $mxManager *\\/\\n\\t\\tif (empty($_REQUEST[\'mx_action\'])) {\\n\\t\\t\\treturn;\\n\\t\\t}\\n\\t\\telseif (!$mxManager = $modx->getService(\'mxmanager\', \'mxManager\', MODX_CORE_PATH . \'components\\/mxmanager\\/model\\/mxmanager\\/\', $scriptProperties)) {\\n\\t\\t\\t$this->modx->log(modX::LOG_LEVEL_ERROR, \'Could not load class msManager.\');\\n\\t\\t\\treturn;\\n\\t\\t}\\n\\n\\t\\t$response = $mxManager->handleRequest($_REQUEST);\\n\\t\\t@session_write_close();\\n\\t\\tif (empty($_REQUEST[\'debug\'])) {\\n\\t\\t\\texit($modx->toJSON($response));\\n\\t\\t}\\n\\t\\telse {\\n\\t\\t\\techo \'<pre>\';\\n\\t\\t\\tprint_r($response);\\n\\t\\t\\techo \'<\\/pre>\';\\n\\t\\t\\tdie;\\n\\t\\t}\\n\\t\\tbreak;\\n\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":1,"static_file":"core\\/components\\/mxmanager\\/elements\\/plugins\\/plugin.mxmanager.php","content":"switch ($modx->event->name) {\\n\\n\\tcase \'OnManagerPageInit\':\\n\\t\\t\\/** @var array $scriptProperties *\\/\\n\\t\\t\\/** @var mxManager $mxManager *\\/\\n\\t\\tif (empty($_REQUEST[\'mx_action\'])) {\\n\\t\\t\\treturn;\\n\\t\\t}\\n\\t\\telseif (!$mxManager = $modx->getService(\'mxmanager\', \'mxManager\', MODX_CORE_PATH . \'components\\/mxmanager\\/model\\/mxmanager\\/\', $scriptProperties)) {\\n\\t\\t\\t$this->modx->log(modX::LOG_LEVEL_ERROR, \'Could not load class msManager.\');\\n\\t\\t\\treturn;\\n\\t\\t}\\n\\n\\t\\t$response = $mxManager->handleRequest($_REQUEST);\\n\\t\\t@session_write_close();\\n\\t\\tif (empty($_REQUEST[\'debug\'])) {\\n\\t\\t\\texit($modx->toJSON($response));\\n\\t\\t}\\n\\t\\telse {\\n\\t\\t\\techo \'<pre>\';\\n\\t\\t\\tprint_r($response);\\n\\t\\t\\techo \'<\\/pre>\';\\n\\t\\t\\tdie;\\n\\t\\t}\\n\\t\\tbreak;\\n\\n}"}',
+        'guid' => '02c27134db72718e074391a1be16ec59',
+        'native_key' => NULL,
+        'signature' => 'bb13e59e7f0c743f1a8bdfe82e143ccd',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '133956e6511787655d0c020f6d9009c8' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnManagerPageInit","priority":0,"propertyset":0}',
+              'guid' => 'da5b719366ee94e516aabb7bcb936bd3',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnManagerPageInit',
+              ),
+              'signature' => '150ad30b218e5318151d157ddca7348a',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'mxmanager',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"mxmanager-1.0.1-pl\\/modCategory\\/48216f21d1f8b733f3c1cd1dbf09de36\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"mxmanager"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5bda1373af37473ecd60bcf564abcb3e',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '48216f21d1f8b733f3c1cd1dbf09de36',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"mxManager"}',
+);
