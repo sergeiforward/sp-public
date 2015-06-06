@@ -15,12 +15,12 @@ $config_options = array (
 $driver_options = array (
 );
 
-$lastInstallTime = 1424898657;
+$lastInstallTime = 1433621991;
 
-$site_id = 'modx54ee3a619766d4.16355796';
+$site_id = 'modx557355e798fd06.76169797';
 $site_sessionname = 'SN54ee396351b41';
 $https_port = '443';
-$uuid = 'c6a767f5-cfa4-4f10-83a1-2599fa3844b1';
+$uuid = '93df33ee-6620-4bec-9a59-650a80272f2a';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/www/sp/core/';
